@@ -2,6 +2,7 @@ import { Box, Button, TextField, Typography } from "@mui/material";
 import LoginIcon from '@mui/icons-material/Login';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import { useState } from "react";
+import PinSearch from "./PinSearch";
 const Login = () => {
   const [isSignUp, setIsSignUp] = useState(false);
   const[inputs,setInputs]=useState({
@@ -63,6 +64,7 @@ const reset = ()=>{
         </Box>
         <div>{inputs.name}</div>
       </form>
+      <PinSearch/>
     </>
   );
 };
