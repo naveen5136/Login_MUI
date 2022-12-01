@@ -1,9 +1,10 @@
-import * as React from 'react';
+import React,{useState}  from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
+import { Button } from '@mui/material';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
@@ -20,8 +21,10 @@ import Drafts  from './components/Pages/Drafts';
 
 export default function Sidebar() {
   const navigate = useNavigate()
-  const drawerWidth = 240;
-
+  const [drawerWidth,setDrawerWidth] = useState(240);
+function handleSidebarSize(){
+   setDrawerWidth(70)
+}
   return (
     <div className="App">
        <Box sx={{ display: 'flex' }}>
@@ -72,7 +75,9 @@ export default function Sidebar() {
             </ListItem>
           ))}
         </List>
+        <Button onClick={handleSidebarSize}>Resize</Button>
       </Drawer>
+     
       </Box>
       <Routes > 
       <Route path="/inbox" element={<Inbox/>} /> 
